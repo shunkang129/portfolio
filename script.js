@@ -11,7 +11,7 @@ window.onload = function() {
 
     var typed = new Typed(".endingText", {
 
-        strings: ["Thanks for watching!"],
+        strings: ["Thanks for paying a visit!", "Have a nice day!"],
         typeSpeed: 50,
         backSpeed: 75,
         fadeOut: true,
