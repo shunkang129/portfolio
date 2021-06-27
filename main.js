@@ -1,6 +1,9 @@
 import './style.css';
 import './scripts/script.js';
-
+import './images/nice4.jpg';
+import './images/kang.jpg';
+import './images/moon.jpg';
+import './images/normal.jpg';
 
 import * as THREE from 'three';
 
