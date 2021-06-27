@@ -62,7 +62,7 @@ Array(200).fill().forEach(addStar);
 
 //background
 
-const spaceTexture = new THREE.TextureLoader().load('./images/nice4.jpg');
+const spaceTexture = new THREE.TextureLoader().load('https://github.com/shunkang129/portfolio/blob/main/images/nice4.jpg');
 scene.background = spaceTexture;
 
 
