@@ -1,14 +1,15 @@
 import './style.css';
 import './scripts/script.js';
-import './images/nice4.jpg';
-import './images/kang.jpg';
-import './images/moon.jpg';
-import './images/normal.jpg';
+import backgroundImage from './images/nice4.jpg';
+import avatar from './images/kang.jpg';
+import moonImage from './images/moon.jpg';
+import moonSurface from './images/normal.jpg';
 
 import * as THREE from 'three';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { Sphere } from 'three';
+
 
 //Setup
 
@@ -67,12 +68,12 @@ Array(200).fill().forEach(addStar);
 
 //background
 
-const spaceTexture = new THREE.TextureLoader().load('./images/nice4.jpg');
+const spaceTexture = new THREE.TextureLoader().load(backgroundImage);
 scene.background = spaceTexture;
 
 
 //avatar
-const kangTexture = new THREE.TextureLoader().load('./images/kang.jpg');
+const kangTexture = new THREE.TextureLoader().load(avatar);
 
 const kang = new THREE.Mesh(
     new THREE.BoxGeometry(3, 3, 3),
@@ -83,8 +84,8 @@ scene.add(kang);
 
 
 //moon
-const moonTexture = new THREE.TextureLoader().load('./images/moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('./images/normal.jpg');
+const moonTexture = new THREE.TextureLoader().load(moonImage);
+const normalTexture = new THREE.TextureLoader().load(moonSurface);
 
 const moon = new THREE.Mesh(
     new THREE.SphereGeometry(3, 32, 32),
