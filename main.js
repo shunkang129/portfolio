@@ -62,12 +62,12 @@ Array(200).fill().forEach(addStar);
 
 //background
 
-const spaceTexture = new THREE.TextureLoader().load('https://github.com/shunkang129/portfolio/blob/main/images/nice4.jpg');
+const spaceTexture = new THREE.TextureLoader().load('./images/nice4.jpg');
 scene.background = spaceTexture;
 
 
 //avatar
-const kangTexture = new THREE.TextureLoader().load('https://github.com/shunkang129/portfolio/blob/main/images/kang.jpg');
+const kangTexture = new THREE.TextureLoader().load('./images/kang.jpg');
 
 const kang = new THREE.Mesh(
     new THREE.BoxGeometry(3, 3, 3),
@@ -78,8 +78,8 @@ scene.add(kang);
 
 
 //moon
-const moonTexture = new THREE.TextureLoader().load('https://github.com/shunkang129/portfolio/blob/main/images/moon.jpg');
-const normalTexture = new THREE.TextureLoader().load('https://github.com/shunkang129/portfolio/blob/main/images/normal.jpg');
+const moonTexture = new THREE.TextureLoader().load('./images/moon.jpg');
+const normalTexture = new THREE.TextureLoader().load('./images/normal.jpg');
 
 const moon = new THREE.Mesh(
     new THREE.SphereGeometry(3, 32, 32),
