@@ -1,5 +1,6 @@
-import './style.css'
-import './scripts/script.js'
+import './style.css';
+import './scripts/script.js';
+
 
 import * as THREE from 'three';
 
