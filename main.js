@@ -31,7 +31,7 @@ renderer.render(scene, camera);
 //Torus
 
 const geometry = new THREE.TorusGeometry(10, 3, 16, 100)
-const material = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
+const material = new THREE.MeshStandardMaterial({ color: 0x3562B3 });
 const torus = new THREE.Mesh(geometry, material);
 
 scene.add(torus)
@@ -53,15 +53,24 @@ const controls = new OrbitControls(camera, renderer.domElement); */
 
 
 function addStar() {
-    const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-    const material = new THREE.MeshStandardMaterial({ color: 0xffffff })
+    // const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+    // const material = new THREE.MeshStandardMaterial({ color: 0xffffff })
+    // const star = new THREE.Mesh(geometry, material);
+
+    // const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+
+    // star.position.set(x, y, z);
+    // scene.add(star)
+
+
+    const geometry = new THREE.OctahedronGeometry(1, 0);
+    const material = new THREE.MeshStandardMaterial({ color: 0xB2F0FC })
     const star = new THREE.Mesh(geometry, material);
 
-    const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+    const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(200));
 
     star.position.set(x, y, z);
     scene.add(star)
-
 }
 
 Array(200).fill().forEach(addStar);
@@ -76,7 +85,7 @@ scene.background = spaceTexture;
 const kangTexture = new THREE.TextureLoader().load(avatar);
 
 const kang = new THREE.Mesh(
-    new THREE.BoxGeometry(3, 3, 3),
+    new THREE.BoxGeometry(1.5, 1.5, 1.5),
     new THREE.MeshBasicMaterial({ map: kangTexture })
 )
 
@@ -101,7 +110,7 @@ moon.position.z = 20;
 moon.position.setX(-10);
 
 kang.position.z = -5;
-kang.position.x = 2;
+kang.position.x = 1;
 
 //scroll animation
 function moveCamera() {
@@ -110,6 +119,7 @@ function moveCamera() {
     moon.rotation.y += 0.075;
     moon.rotation.z += 0.05;
 
+    kang.rotation.x += 0.05;
     kang.rotation.y += 0.01;
     kang.rotation.z += 0.01;
 
