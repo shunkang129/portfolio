@@ -155,13 +155,13 @@ function animate() {
 animate();
 
 function calculateWorkDuration() {
-    var zntJoinDate = moment([2021, 9, 2]); // date got into ZNT
-    var b2beJoinDate = moment([2020, 2, 10]); // date got into ZNT
-    var b2beLeaveDate = moment([2020, 7, 1]); // date got into ZNT
-    var currentTime = moment(); // get current datetime
+    const zntJoinDate = moment([2021, 9, 2]); // date got into ZNT
+    const b2beJoinDate = moment([2020, 2, 10]); // date got into ZNT
+    const b2beLeaveDate = moment([2020, 7, 1]); // date got into ZNT
+    const currentTime = moment(); // get current datetime
 
-    var zntDifference = currentTime.diff(zntJoinDate, "months") + 1; // znt working duration
-    var b2beDifference = b2beLeaveDate.diff(b2beJoinDate, "months") + 1; // B2Be working duration
+    const zntDifference = currentTime.diff(zntJoinDate, "months") + 1; // znt working duration
+    const b2beDifference = b2beLeaveDate.diff(b2beJoinDate, "months") + 1; // B2Be working duration
 
     document.getElementById("zntDuration").innerHTML +=
         " (" + zntDifference + " Months" + ")";
