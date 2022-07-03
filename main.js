@@ -4,7 +4,7 @@ import backgroundImage from "./images/nice5.png";
 import avatar from "./images/kang.jpg";
 import moonImage from "./images/moon.jpg";
 import moonSurface from "./images/normal.jpg";
-
+import * as moment from "moment";
 import * as THREE from "three";
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
@@ -153,3 +153,20 @@ function animate() {
 }
 
 animate();
+
+function calculateWorkDuration() {
+    var zntJoinDate = moment([2021, 9, 2]); // date got into ZNT
+    var b2beJoinDate = moment([2020, 2, 10]); // date got into ZNT
+    var b2beLeaveDate = moment([2020, 7, 1]); // date got into ZNT
+    var currentTime = moment(); // get current datetime
+
+    var zntDifference = currentTime.diff(zntJoinDate, "months") + 1; // znt working duration
+    var b2beDifference = b2beLeaveDate.diff(b2beJoinDate, "months") + 1; // B2Be working duration
+
+    document.getElementById("zntDuration").innerHTML +=
+        " (" + zntDifference + " Months" + ")";
+    document.getElementById("b2beDuration").innerHTML +=
+        " (" + b2beDifference + " Months" + ")";
+}
+
+calculateWorkDuration();
