@@ -155,18 +155,18 @@ function animate() {
 animate();
 
 function calculateWorkDuration() {
-    const zntJoinDate = moment([2021, 9, 2]); // date got into ZNT
-    const b2beJoinDate = moment([2020, 2, 10]); // date got into ZNT
-    const b2beLeaveDate = moment([2020, 7, 1]); // date got into ZNT
-    const currentTime = moment(); // get current datetime
+    let zntJoinDate = moment([2021, 9, 2]); // date got into ZNT
+    let b2beJoinDate = moment([2020, 2, 10]); // date got into ZNT
+    let b2beLeaveDate = moment([2020, 7, 1]); // date got into ZNT
+    let currentTime = moment(); // get current datetime
 
-    const zntDifference = currentTime.diff(zntJoinDate, "months") + 1; // znt working duration
-    const b2beDifference = b2beLeaveDate.diff(b2beJoinDate, "months") + 1; // B2Be working duration
+    let zntDifference = currentTime.diff(zntJoinDate, "months") + 1; // znt working duration
+    let b2beDifference = b2beLeaveDate.diff(b2beJoinDate, "months") + 1; // B2Be working duration
 
-    document.getElementById("zntDuration").innerHTML +=
-        " (" + zntDifference + " Months" + ")";
-    document.getElementById("b2beDuration").innerHTML +=
-        " (" + b2beDifference + " Months" + ")";
+    let x = (document.getElementById("zntDuration").innerHTML +=
+        " (" + zntDifference + " Months" + ")");
+    let y = (document.getElementById("b2beDuration").innerHTML +=
+        " (" + b2beDifference + " Months" + ")");
 }
 
 calculateWorkDuration();
